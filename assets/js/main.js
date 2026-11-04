@@ -1,5 +1,6 @@
 /**
  * Kalyar Soe Myat Htwe — Personal Portfolio Application Script
+ * Referencing official CV & career milestones
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilter();
   initProjectModal();
   initContactForm();
-  initCopyEmail();
+  initCopyActions();
 });
 
 /* --------------------------------------------------------------------------
@@ -22,7 +23,6 @@ function initTheme() {
   const themeIconDark = document.getElementById('theme-icon-dark');
   const themeIconLight = document.getElementById('theme-icon-light');
 
-  // Check saved theme or system preference
   const savedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -62,7 +62,6 @@ function initScrollProgress() {
     const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
     if (progressBar) progressBar.style.width = `${progress}%`;
 
-    // Subtle header background elevation on scroll
     if (header) {
       if (window.scrollY > 40) {
         header.classList.add('shadow-lg', 'bg-opacity-90');
@@ -132,10 +131,11 @@ function initTypewriter() {
   if (!target) return;
 
   const roles = [
-    'Full-Stack Web Developer',
-    'Laravel & PHP Specialist',
-    'Backend & Cloud Architect',
-    'Python & REST API Engineer'
+    'Senior Software Engineer',
+    'Senior Full Stack Developer',
+    'PHP & Laravel Specialist',
+    'Node.js & React Developer',
+    'Enterprise ERP Architect'
   ];
 
   let roleIndex = 0;
@@ -148,20 +148,20 @@ function initTypewriter() {
     if (isDeleting) {
       target.textContent = currentRole.substring(0, charIndex - 1);
       charIndex--;
-      typingSpeed = 40;
+      typingSpeed = 35;
     } else {
       target.textContent = currentRole.substring(0, charIndex + 1);
       charIndex++;
-      typingSpeed = 90;
+      typingSpeed = 80;
     }
 
     if (!isDeleting && charIndex === currentRole.length) {
       isDeleting = true;
-      typingSpeed = 1800; // Pause at full word
+      typingSpeed = 1800;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
-      typingSpeed = 400; // Pause before new word
+      typingSpeed = 400;
     }
 
     setTimeout(type, typingSpeed);
@@ -171,90 +171,138 @@ function initTypewriter() {
 }
 
 /* --------------------------------------------------------------------------
- * 6. Projects Data & Interactive Modal
+ * 6. Projects Data & Interactive Modal (From Official CV)
  * -------------------------------------------------------------------------- */
 const projectData = {
   careviewer: {
-    title: 'CareViewer Cloud SaaS Platform',
-    category: 'Enterprise SaaS & Cloud',
-    period: 'Production Deployment',
-    role: 'Backend & Full Stack Engineer',
-    overview: 'An enterprise nursing and caregiving operations management platform for elderly care facilities in Japan (www.careviewer.jp). Handles complex care planning, daily digital care logs, and automated compliance with Japanese Ministry of Health regulations.',
+    title: 'Care Viewer Management System',
+    company: 'Polestar Service Co., Ltd | Yangon',
+    category: 'Healthcare & SaaS',
+    period: 'Mar 2025 - Present',
+    role: 'Senior Full Stack Developer',
+    overview: 'An enterprise healthcare and nursing management ecosystem operating for hospital networks and eldercare facilities. Powers critical hospital operations, patient records, health evaluations, and ministerial compliance.',
     challenges: [
-      'Engineered ministerial LIFE standard CSV export and import pipelines for compliance and data exchange with government systems.',
-      'Architected zero-downtime database migration moving production data from AWS to Sakura Cloud infrastructure.',
-      'Designed multi-tenant data isolation and dynamic pricing plan permission tiers for enterprise facility clients.'
+      'Architected comprehensive Patient Management and Hospital Management operational modules with strict privacy standards.',
+      'Developed specialized Oral & Nutrition Screening workflows and Daily Life Records pipelines for clinical caregivers.',
+      'Integrated resilient cloud architectures on AWS EC2/RDS with optimized MySQL queries for real-time facility logging.'
     ],
     features: [
-      'Care Plan 2 digital scheduling with interactive drag-and-drop date validation',
-      'Accident reporting, handover (Moshiokuri) records, and shift communications',
-      'Automated Oral and Nutritional screening CSV pipelines',
-      'Role-based access controls across care workers, managers, and medical directors'
+      'Hospital Management and Department Configuration',
+      'Patient Management, Profiles, and Medication Tracking',
+      'Oral Screening and Nutritional Diagnostic Records',
+      'Daily Life Record timeline and clinical handover notes'
     ],
-    techStack: ['PHP 8', 'Laravel', 'MySQL', 'Docker', 'AWS', 'Sakura Cloud', 'RESTful APIs', 'Redis', 'Linux'],
+    techStack: ['Laravel', 'JavaScript', 'AWS', 'CSS', 'MySQL', 'RESTful APIs'],
     githubUrl: 'https://github.com/kalyarsoe',
     liveUrl: 'https://www.careviewer.jp'
   },
-  'clothing-shop': {
-    title: 'Modern Thread - E-Commerce & Retail Management System',
-    category: 'Python & Automation',
-    period: 'Full Stack Open Source',
-    role: 'Lead Architect & Developer',
-    overview: 'A zero-dependency, modular Python retail and e-commerce inventory management platform with interactive CLI and web storefront. Solves inventory variant management, promotional discounts, and financial sales reporting.',
+  'gaming-platform': {
+    title: 'Online Gaming & Entertainment Platform',
+    company: 'Future Innovation Co., Ltd | Yangon',
+    category: 'Fintech & Gaming',
+    period: 'Sep 2024 - Mar 2025',
+    role: 'Senior PHP Developer',
+    overview: 'A high-throughput, real-time online gaming and entertainment platform engineered for Group Online Entertainment. Supports live sports betting, electronic games, and virtual casinos with strict regulatory standards.',
     challenges: [
-      'Implemented atomic inventory deductions to prevent race conditions during concurrent checkouts.',
-      'Constructed a zero-external-dependency SPA architecture using Python built-in standard library http.server and SQLite.',
-      'Achieved 100% test coverage with automated unit tests for cart operations, tax logic, and restocking workflows.'
+      'Engineered high-concurrency transactional architectures using PostgreSQL and Redis caching for ultra-low latency bet processing.',
+      'Implemented reactive frontend user interfaces using Vue.js for dynamic live scoreboards and interactive games.',
+      'Enforced rigorous compliance with regulatory security and financial audit trails to protect player transactions.'
     ],
     features: [
-      'Multi-variant SKU tracking by size (XS to XXL) and custom colorways',
-      'Promotional coupon engine supporting percentage & fixed discounts with minimum spend constraints',
-      'Dual interface: Terminal POS CLI with ANSI tables + Responsive modern web storefront',
-      'Automated sales valuation reporting, gross margin tracking, and CSV export'
+      'Live sports betting engine with dynamic real-time odds calculation',
+      'Virtual casino and electronic games lobby with wallet balances',
+      'Sub-millisecond balance deductions and atomic transaction rollbacks',
+      'Comprehensive administrative fraud detection and audit analytics'
     ],
-    techStack: ['Python 3', 'SQLite', 'REST API', 'Vanilla JavaScript', 'HTML5/CSS3', 'Unit Testing'],
+    techStack: ['Laravel', 'Vue.js', 'PostgreSQL', 'Redis', 'JavaScript', 'CSS'],
     githubUrl: 'https://github.com/kalyarsoe',
     liveUrl: null
   },
-  'employee-api': {
-    title: 'Enterprise Employee & Department REST API',
-    category: 'APIs & Backend',
-    period: 'Production Microservice',
-    role: 'Backend API Architect',
-    overview: 'A robust, high-performance RESTful API built to manage corporate organization structures, employee profiles, department hierarchies, and secure data access with strict validation.',
+  'construction-system': {
+    title: 'Smart Construction Management System',
+    company: 'Brycen Myanmar Co., Ltd | Yangon',
+    category: 'Node.js & Mobile Web',
+    period: 'May 2023 - Dec 2023',
+    role: 'Senior Software Engineer',
+    overview: 'A real-time, responsive IoT-connected site management system facilitating worker safety, site operations, daily health check protocols, and role-based operational permissions on construction locations.',
     challenges: [
-      'Designed normalized relational database schemas with optimized foreign keys and index strategies for sub-millisecond query responses.',
-      'Implemented token-based authentication and granular permission middleware.',
-      'Provided consistent JSON API specifications with standardized error codes and pagination.'
+      'Developed real-time cloud data sync utilizing Firebase Firestore and Node.js for off-site connectivity.',
+      'Built a robust, type-safe full-stack application using TypeScript and React JS.',
+      'Designed responsive biometric/health assessment checklists ensuring site workers meet occupational safety requirements.'
     ],
     features: [
-      'Comprehensive CRUD endpoints for employees, roles, departments, and payroll profiles',
-      'Dynamic filtering, searching, and multi-field sorting capabilities',
-      'Automated request payload validation and custom sanitization filters',
-      'Postman collection and API documentation schema'
+      'Worker onboarding, certification, and attendance tracking',
+      'Daily health checking and safety compliance audit logs',
+      'Multi-site construction project overview and dispatch management',
+      'Role-based permission controls for site engineers, supervisors, and admins'
     ],
-    techStack: ['PHP', 'MySQL', 'REST API', 'OOP Architecture', 'Git', 'Postman'],
-    githubUrl: 'https://github.com/kalyarsoe/employee-api',
+    techStack: ['Node.js', 'TypeScript', 'React JS', 'Firebase', 'REST APIs'],
+    githubUrl: 'https://github.com/kalyarsoe',
     liveUrl: null
   },
-  'cloud-migration': {
-    title: 'AWS to Sakura Cloud Migration & ETL Pipeline',
-    category: 'Cloud & Architecture',
-    period: 'Enterprise Infrastructure',
-    role: 'Cloud & Database Specialist',
-    overview: 'A mission-critical data migration and ETL orchestration pipeline transitioning sensitive Japanese healthcare databases from AWS EC2/RDS to cost-optimized Sakura Cloud infrastructure.',
+  'contract-system': {
+    title: 'Enterprise Contract Management System',
+    company: 'Brycen Myanmar Co., Ltd | Yangon',
+    category: 'Enterprise SaaS',
+    period: 'Jan 2024 - Apr 2024',
+    role: 'Senior Software Engineer',
+    overview: 'A centralized corporate contract lifecycle solution automating contract authoring, template generation, multi-party counterparty management, and status approval workflows.',
     challenges: [
-      'Executed large-scale multi-gigabyte SQL migrations with zero loss of medical or shift record fidelity.',
-      'Configured custom Shell/Bash verification scripts that performed pre- and post-migration checksum validation.',
-      'Tuned MySQL InnoDB buffer pools and index caching to drastically improve query performance on new instances.'
+      'Built dynamic dashboard visualization analytics for contract statuses, expiration warnings, and renewal rates using React JS.',
+      'Created reusable template engines enabling rapid contract generation with automated counterparty field population.',
+      'Implemented secure audit logs tracking every change and signature milestone across contract lifecycles.'
     ],
     features: [
-      'Automated database dump, compression, and secure transfer pipelines',
-      'Failover recovery protocols and rollback staging environments',
-      'Automated daily backup verification cron jobs',
-      'Detailed migration auditing and memory optimization documentation'
+      'Interactive contract executive dashboard and status indicators',
+      'Counterparty management with vendor credentials and histories',
+      'Contract template creation, version control, and auto-population',
+      'User permission matrix and digital approval routing'
     ],
-    techStack: ['AWS', 'Sakura Cloud', 'MySQL', 'Bash Scripting', 'Linux', 'Docker', 'SSH/Rsync'],
+    techStack: ['Laravel', 'React JS', 'MySQL', 'JavaScript', 'REST APIs'],
+    githubUrl: 'https://github.com/kalyarsoe',
+    liveUrl: null
+  },
+  'scroll360-erp': {
+    title: 'Scroll360 Retail & E-Commerce ERP System',
+    company: 'Brycen Myanmar Co., Ltd | Yangon',
+    category: 'Enterprise ERP',
+    period: 'May 2024 - Sep 2024',
+    role: 'Senior Software Engineer',
+    overview: 'An extensive ERP software platform powering multi-channel retail operations: warehouse order processing, live stock synchronization, shop networks, and structured automated SFTP data exchanges.',
+    challenges: [
+      'Maintained and extended high-reliability enterprise backend architectures built on the Zend PHP framework.',
+      'Implemented automated SFTP file transfer pipelines for scheduled merchant inventory synchronization and financial reconciliation.',
+      'Engineered multi-category hierarchy and stock reservation logic preventing overselling during peak sales events.'
+    ],
+    features: [
+      'Order fulfillment, invoicing, and tracking lifecycle management',
+      'Multi-warehouse stock management with automated threshold alerts',
+      'Shop and branch management with sales attribution analytics',
+      'Product catalog management with category trees and variants'
+    ],
+    techStack: ['Zend Framework', 'SFTP', 'MySQL', 'JavaScript', 'HTML5/CSS3'],
+    githubUrl: 'https://github.com/kalyarsoe',
+    liveUrl: null
+  },
+  'erp-admin-panel': {
+    title: 'Integrated Enterprise ERP & Admin Panel Ecosystem',
+    company: 'Brycen Myanmar Co., Ltd | Yangon',
+    category: 'Enterprise ERP',
+    period: 'Jun 2020 - May 2023',
+    role: 'Junior Software Engineer → Senior Software Engineer',
+    overview: 'A flagship corporate ERP suite and centralized administration portal serving human resources, corporate expenses, asset & vehicle reservations, department hierarchies, and fine-grained permissions.',
+    challenges: [
+      'Progressed from Junior to Senior Software Engineer over 3 years, leading core backend architectural modules.',
+      'Designed a versatile Plan Management module managing shared corporate meeting rooms and fleet vehicle reservation schedules.',
+      'Integrated Redis caching and secure SFTP file exchanges for centralized ERP multi-system synchronization.'
+    ],
+    features: [
+      'Human Resources (HR) & integrated attendance/leave tracking',
+      'Corporate Expense management and approval routing',
+      'Plan Management (meeting room scheduling & company vehicle booking)',
+      'Fine-grained Role-Based Access Control (RBAC) across departments'
+    ],
+    techStack: ['Laravel', 'React JS', 'Redis', 'SFTP', 'MySQL', 'REST APIs'],
     githubUrl: 'https://github.com/kalyarsoe',
     liveUrl: null
   }
@@ -290,7 +338,6 @@ function initProjectFilter() {
 
 function initProjectModal() {
   const modal = document.getElementById('project-modal');
-  const modalContent = document.getElementById('modal-card-content');
   const closeModalBtn = document.getElementById('modal-close-btn');
   const detailBtns = document.querySelectorAll('.open-project-modal');
 
@@ -302,10 +349,9 @@ function initProjectModal() {
 
     document.getElementById('modal-title').textContent = data.title;
     document.getElementById('modal-badge').textContent = data.category;
-    document.getElementById('modal-role').textContent = `Role: ${data.role} • ${data.period}`;
+    document.getElementById('modal-role').textContent = `${data.role} • ${data.company} (${data.period})`;
     document.getElementById('modal-overview').textContent = data.overview;
 
-    // Challenges list
     const challengesList = document.getElementById('modal-challenges');
     challengesList.innerHTML = data.challenges.map(c => `
       <li class="flex items-start gap-2 text-slate-300">
@@ -314,7 +360,6 @@ function initProjectModal() {
       </li>
     `).join('');
 
-    // Features list
     const featuresList = document.getElementById('modal-features');
     featuresList.innerHTML = data.features.map(f => `
       <li class="flex items-start gap-2 text-slate-300">
@@ -323,7 +368,6 @@ function initProjectModal() {
       </li>
     `).join('');
 
-    // Tech badges
     const techContainer = document.getElementById('modal-tech');
     techContainer.innerHTML = data.techStack.map(t => `
       <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
@@ -331,7 +375,6 @@ function initProjectModal() {
       </span>
     `).join('');
 
-    // Action links
     const modalGithub = document.getElementById('modal-github');
     const modalLive = document.getElementById('modal-live');
 
@@ -386,8 +429,6 @@ function initProjectModal() {
  * -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contact-form');
-  const toast = document.getElementById('toast-notification');
-  const toastMessage = document.getElementById('toast-message');
 
   if (!form) return;
 
@@ -398,12 +439,11 @@ function initContactForm() {
     const email = form.querySelector('[name="email"]')?.value || '';
     const message = form.querySelector('[name="message"]')?.value || '';
 
-    // Direct mailto trigger as fallback for direct communication
     const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
     const body = encodeURIComponent(`Hello Kalyar,\n\n${message}\n\nFrom: ${name} (${email})`);
-    const mailtoUrl = `mailto:59438606+kalyarsoe@users.noreply.github.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:kalyarsoemyathtwe123@gmail.com?subject=${subject}&body=${body}`;
 
-    showToast('✨ Thank you! Launching your email client now...');
+    showToast('✨ Thank you! Launching your email client...');
     window.location.href = mailtoUrl;
 
     form.reset();
@@ -411,25 +451,25 @@ function initContactForm() {
 }
 
 /* --------------------------------------------------------------------------
- * 8. Copy Email to Clipboard
+ * 8. Copy to Clipboard (Email & Phone)
  * -------------------------------------------------------------------------- */
-function initCopyEmail() {
-  const copyBtns = document.querySelectorAll('.copy-email-btn');
+function initCopyActions() {
+  const copyBtns = document.querySelectorAll('.copy-btn');
   copyBtns.forEach(btn => {
     btn.addEventListener('click', async () => {
-      const email = btn.getAttribute('data-email') || '59438606+kalyarsoe@users.noreply.github.com';
+      const textToCopy = btn.getAttribute('data-copy') || 'kalyarsoemyathtwe123@gmail.com';
+      const label = btn.getAttribute('data-label') || 'Text';
       try {
-        await navigator.clipboard.writeText(email);
-        showToast('📋 Email copied to clipboard!');
+        await navigator.clipboard.writeText(textToCopy);
+        showToast(`📋 ${label} copied to clipboard!`);
       } catch (err) {
-        // Fallback
         const textarea = document.createElement('textarea');
-        textarea.value = email;
+        textarea.value = textToCopy;
         document.body.appendChild(textarea);
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        showToast('📋 Email copied to clipboard!');
+        showToast(`📋 ${label} copied to clipboard!`);
       }
     });
   });

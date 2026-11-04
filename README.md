@@ -1,88 +1,71 @@
-# Kalyar Soe Myat Htwe — Professional Developer Portfolio
+# Kalyar Soe Myat Htwe — Senior Software Engineer Portfolio
 
-Modern, high-performance, responsive personal developer portfolio showcasing enterprise software engineering, backend architecture, cloud data migrations, and full-stack web applications.
-
----
-
-## 🌟 Key Highlights
-
-- **Aesthetic & Modern UI**: Built with a sleek dark/light mode switcher, glassmorphism cards, glowing ambient meshes, and smooth micro-interactions.
-- **Production-Tested Projects**:
-  - **CareViewer Cloud SaaS Platform**: Enterprise nursing & eldercare management platform serving facilities across Japan (`www.careviewer.jp`) built with Laravel, PHP, and Docker.
-  - **Modern Thread E-Commerce**: Zero-dependency Python inventory and retail management engine with multi-variant SKUs, coupon calculation, and automated test coverage.
-  - **Enterprise Employee REST API**: High-throughput RESTful API with token authentication, normalized SQL models, and OpenAPI/Postman documentation.
-  - **AWS to Sakura Cloud Migration**: Zero-downtime database migration of historical Japanese healthcare records with verified ETL checksums.
-- **Interactive Features**:
-  - Live role typewriter header animation
-  - Filterable project grid (Enterprise SaaS, Python & Systems, APIs & Backend, Cloud & ETL)
-  - Interactive deep-dive modal viewer for technical architecture and challenges
-  - Email copy-to-clipboard with instant toast notifications
-  - Responsive drawer menu for mobile and tablet devices
-  - Clean print stylesheet for CV/resume exporting
+Personal developer portfolio of **Kalyar Soe Myat Htwe**, Senior Software Engineer with over 6 years of experience in enterprise full-stack web development, ERP platforms, and cloud-scale architectures.
 
 ---
 
-## 🛠️ Built With
+## 🌟 Executive Summary
 
-- **HTML5 & CSS3**: Semantic markup and modern CSS custom variables.
-- **Tailwind CSS**: Utility-first responsive design framework.
-- **Vanilla Modern JavaScript (ES6+)**: Zero bulky framework dependencies for maximum performance (100/100 Lighthouse performance).
-- **Lucide Icons**: Crisp, clean vector icon set.
-- **Google Fonts**: `Outfit` (Headings), `Inter` (Body typography), and `JetBrains Mono` (Code & badges).
+Dedicated and highly skilled Software Engineer with over 6 years of experience in designing, developing, and delivering robust, scalable, and high-quality software solutions. Proficient in PHP frameworks (Laravel, CakePHP, Zend), modern web technologies (Node.js, TypeScript, React JS, Vue.js), and software development best practices with a proven track record of managing projects throughout the full development lifecycle.
+
+- **Current Role**: Senior Full Stack Developer at **Polestar Service Co., Ltd**
+- **Prior Experience**: Senior PHP Developer at **Future Innovation Co., Ltd**, Senior Software Engineer at **Brycen Myanmar Co., Ltd**
+- **Education**: Bachelor of Computer Science (B.C.Sc), **University of Computer Studies (Dawei)** [2013 ~ 2018]
+- **Contact**: `kalyarsoemyathtwe123@gmail.com` | `09260613677` | Yangon, Myanmar
+
+---
+
+## 🚀 Enterprise Projects & Systems Featured
+
+1. **Care Viewer Management System** (*Polestar Service Co., Ltd | Mar 2025 - Present*)
+   - Hospital Management, Patient Management, Oral Screening, and Daily Life Records.
+   - *Tech*: Laravel, JavaScript, AWS, CSS, MySQL.
+2. **Online Gaming & Entertainment Platform** (*Future Innovation Co., Ltd | Sep 2024 - Mar 2025*)
+   - High-concurrency sports betting, live casinos, electronic games with strict regulatory compliance.
+   - *Tech*: Laravel, Vue.js, PostgreSQL, Redis, JavaScript.
+3. **Smart Construction Management System** (*Brycen Myanmar Co., Ltd | May 2023 - Dec 2023*)
+   - IoT-connected site management, worker management, daily health check protocols, and safety compliance.
+   - *Tech*: Node.js, TypeScript, React JS, Firebase.
+4. **Contract Management System** (*Brycen Myanmar Co., Ltd | Jan 2024 - Apr 2024*)
+   - Dashboard analytics, contract lifecycles, counterparty records, and automated templates.
+   - *Tech*: Laravel, React JS, MySQL.
+5. **Scroll360 ERP System** (*Brycen Myanmar Co., Ltd | May 2024 - Sep 2024*)
+   - Retail & e-commerce ERP: order, stock, shop, sales, product, and category management with automated SFTP data transfers.
+   - *Tech*: Zend Framework, JavaScript, HTML, CSS, SFTP, MySQL.
+6. **Integrated Enterprise ERP & Admin Panel Ecosystem** (*Brycen Myanmar Co., Ltd | Jun 2020 - May 2023*)
+   - Human Resources, corporate expense approvals, plan management (meeting room & vehicle bookings), and fine-grained RBAC permissions.
+   - *Tech*: Laravel, React JS, Redis, SFTP, MySQL.
+
+---
+
+## 🛠️ Technical Skills
+
+- **Backend Frameworks**: PHP (Laravel, CakePHP, Zend), Node.js, TypeScript, RESTful APIs, OOP
+- **Frontend Technologies**: React JS, Vue.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap, jQuery, Tailwind CSS
+- **Databases & Caching**: MySQL, PostgreSQL, Redis, Firebase
+- **Cloud & Operating Systems**: AWS, GCP, Ubuntu Linux, Nginx, SFTP
+- **Developer Tools**: Visual Studio Code, Postman, Git & GitHub, PhpMyAdmin, Sublime Text, Notepad++, Eclipse
+- **Languages**: English (Intermediate / Professional Working), Burmese (Native)
 
 ---
 
 ## 🚀 Running Locally
 
-Because this project uses vanilla web technologies and CDN assets, you can run it immediately with zero installation:
-
-### Option 1: Python HTTP Server
 ```bash
-# Navigate to the portfolio folder
+# Navigate to portfolio
 cd portfolio
 
-# Start Python's built-in web server
+# Run Python built-in web server
 python -m http.server 8080
 ```
-Then open `http://localhost:8080` in your web browser.
-
-### Option 2: VS Code Live Server
-Right-click on `index.html` inside VS Code and select **Open with Live Server**.
-
-### Option 3: Node `serve` / `npx`
-```bash
-npx serve .
-```
+Open `http://localhost:8080` in your web browser.
 
 ---
 
-## 🌐 Deploying to GitHub Pages
-
-To make this live on your custom GitHub Pages URL (`https://kalyarsoe.github.io`):
-
-1. **Create the GitHub Repository**:
-   - Create a repository named `kalyarsoe.github.io` (for root user domain) or `portfolio`.
-2. **Push Code to GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial commit of modern personal portfolio"
-   git branch -M main
-   git remote add origin https://github.com/kalyarsoe/portfolio.git  # or kalyarsoe.github.io
-   git push -u origin main
-   ```
-3. **Enable GitHub Pages**:
-   - Go to your repository on GitHub: **Settings** → **Pages**.
-   - Under **Build and deployment** > **Source**, choose **Deploy from a branch**.
-   - Set **Branch** to `main` and folder to `/(root)`.
-   - Click **Save**.
-   - Your site will be live within 60 seconds!
-
----
-
-## 👤 Author
+## 👤 Author Contact
 
 **Kalyar Soe Myat Htwe**
+- **Email**: [kalyarsoemyathtwe123@gmail.com](mailto:kalyarsoemyathtwe123@gmail.com)
+- **Phone**: 09260613677
+- **Address**: No.17, U Phee Street, Sanchaung Township, Yangon, Myanmar
 - **GitHub**: [@kalyarsoe](https://github.com/kalyarsoe)
-- **Specialization**: Full-Stack Web Development, Laravel & PHP, Python, Cloud Databases & Migrations
-- **Languages**: English (Professional), Burmese (Native)
