@@ -85,4 +85,4 @@ To make this live on your custom GitHub Pages URL (`https://kalyarsoe.github.io`
 **Kalyar Soe Myat Htwe**
 - **GitHub**: [@kalyarsoe](https://github.com/kalyarsoe)
 - **Specialization**: Full-Stack Web Development, Laravel & PHP, Python, Cloud Databases & Migrations
-- **Languages**: English, Japanese (JLPT N3), Burmese
+- **Languages**: English (Professional), Burmese (Native)
