@@ -10,7 +10,7 @@ Dedicated and highly skilled Software Engineer with over 6 years of experience i
 
 - **Current Role**: Senior Full Stack Developer at **Polestar Service Co., Ltd**
 - **Prior Experience**: Senior PHP Developer at **Future Innovation Co., Ltd**, Senior Software Engineer at **Brycen Myanmar Co., Ltd**
-- **Education**: Bachelor of Computer Science (B.C.Sc), **University of Computer Studies (Dawei)** [2013 ~ 2018]
+- **Education**: Bachelor of Computer Science (B.C.Sc) [2013 ~ 2018]
 - **Contact**: `kalyarsoemyathtwe123@gmail.com` | `09260613677` | Yangon, Myanmar
 
 ---
